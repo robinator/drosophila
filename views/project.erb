@@ -1,0 +1,15 @@
+<form id="new" action="/projects/<%= @project.name %>/bugs" method="post">
+	<input type="text" name="short" />
+</form>
+<h2>Bugs</h2>
+<table>
+<% @bugs.each do |bug|%>
+	<tr>
+		<td><a href="/projects/<%= @project.name %>/bugs/<%= bug.id %>"><%= bug.short %></a></td>
+		<td><%= bug.long %></td>
+		<td><%= bug.status %></td>
+		<td><%= bug.who %></td>
+		<td><span class="italic"><%= bug.created_at.strftime("%m/%d/%Y") %></span></td>
+	</tr>
+<% end %>
+</table>

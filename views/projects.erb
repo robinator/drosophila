@@ -1,0 +1,12 @@
+<form id="new" action="/projects" method="post">
+	<input type="text" name="name" />
+</form>
+<h2>Projects</h2>
+<table>
+<% @projects.each do |project| %>
+<tr>
+	<td><a href="/projects/<%= project.name %>"><%= project.name %></a></td>
+	<td><a href="/projects/<%= project.id %>/delete">delete</a></td>
+</tr>
+<%end%>	
+</table>
